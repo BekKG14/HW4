@@ -15,40 +15,28 @@ public class Main {
         }
         // Задание 2
         int releaseDate = (int) (Math.random() * 25) + 2000;
-        if(clientOS == 0){
-            if(releaseDate < 2015){
-                System.out.println("Установите облегченную версию приложения для iOS по ссылку");
-            }else {
-                System.out.println("Установите версию приложения для IOS по ссылку");
-            }
+        System.out.println(releaseDate);
+        if(clientOS == 0 && releaseDate > 2015){
+            System.out.println("Установите версию приложения для iOS по ссылке.");
+        }else if (clientOS == 0 && releaseDate < 2015){
+            System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+        }else if (clientOS == 1 && releaseDate > 2015){
+            System.out.println("Установите версию приложения для Android по ссылке");
         }else {
-            if(releaseDate < 2015){
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            }else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
-        }
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        };
         // Задание 3
         int year = (int) (Math.random() * 5) + 2020;
         System.out.println(year);
         if (year > 1584) {
-            switch (year) {
-
-                case 2020:
-                    System.out.println("Вискосный год");
-                    break;
-                case 2021:
-                case 2022:
-                case 2023:
-                    System.out.println("Не високосный год");
-                    break;
-                case 2024:
-                    System.out.println("Високосный год");
-                    break;
+            if(year % 4 == 0 && (year % 100) != 0){
+                System.out.println("Високосный год");
+            }else{
+                System.out.println("Не високосный");
             }
-        }else{
-                System.out.println("Ошибка");
-            }
+        }else {
+            System.out.println("Ошибка");
+        }
         // Задание 4
         /*int deliveryDistance = (int) (Math.random() * 120);
         System.out.println(deliveryDistance); Проверил все дистанции*/
@@ -69,7 +57,7 @@ public class Main {
         //Задание 5
         /*int season = (int) (Math.random() * 13);
         System.out.println(season); проверка */
-        int season = 1
+        int season = 1;
         switch (season){
             case 12:
             case 1:
@@ -91,6 +79,8 @@ public class Main {
             case 11:
                 System.out.println("Осень");
                 break;
+            default:
+                System.out.println("Ошибка");
         }
 }
 }
